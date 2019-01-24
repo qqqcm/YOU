@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+body,html{
+	font:14px "微软雅黑" ,Arial;	
+	
+}
+body,div,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,textarea,p,img {
+        margin:0;
+        padding:0;
+}
+li{
+	list-style:none;	
+}
+a{
+	text-decoration:none;
+	color:#6C6C6C;
+	font-size:12px;	
+}
+a:hover{
+	color:#ff4400;
+}
+h1,h2,h3,h4,h5,h6,strong,b{
+	font-weight:normal;
+	font-size:100%;	
+}
+i,em{
+	font-style:normal;	
+}
+input{
+	outline:none;	
+}
+.clearfix:after{
+	content:' ';
+	display:block;
+	clear:both;
+	height:0;
+	overflow:hidden;
+	visibility:hidden;	
+}
