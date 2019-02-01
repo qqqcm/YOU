@@ -5,8 +5,13 @@
 </template>
 
 <script>
+import {getDanPin} from '../../services/recommendService.js'
 export default {
-
+    created(){
+        getDanPin().then((data)=>{
+            console.log(data);
+        })
+    }
 }
 </script>
 
