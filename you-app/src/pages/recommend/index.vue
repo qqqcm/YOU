@@ -1,6 +1,6 @@
 <template>
     <div id="recommoned">
-       <!-- nav栏 -->
+    <!-- nav栏开始 -->
         <div class="scroll_nav_wrap">
             <ul class="nav_ul">
                 <li class="nav_li " v-for='(item,index) in nav_list' :key="index" @click="selectPage(index)" :class="{active:page == index}">
@@ -8,8 +8,12 @@
                 </li>
             </ul>
         </div>
+    <!-- nav栏结束 -->
+
         <scroller :top="44" :bottom="49" class="scroll_content" >
             {{page}}
+            <router-view/>
+           <!--  <p>dfsdfs fsf </p>
             <p>dfsdfs fsf </p>
             <p>dfsdfs fsf </p>
             <p>dfsdfs fsf </p>
@@ -31,8 +35,7 @@
             <p>dfsdfs fsf </p>
             <p>dfsdfs fsf </p>
             <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
+            <p>dfsdfs fsf </p> -->
         </scroller>
 
     </div>
@@ -55,6 +58,7 @@ export default {
     methods:{
         selectPage(index){
             this.page = index;
+            this.$router.push('/recommend/tab/'+index);
         }
     },
     mounted(){
@@ -82,6 +86,7 @@ p{
         .nav_li{
             line-height: 40px;
             padding:0 25px;
+            list-style:none;
             // width:142px;
             // margin:0 20px;
             text-align:center;
