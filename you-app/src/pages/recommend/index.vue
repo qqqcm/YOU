@@ -1,15 +1,14 @@
 <template>
     <div id="recommoned">
        <!-- nav栏 -->
-        <div class="scroll_wrap">
+        <div class="scroll_nav_wrap">
             <ul class="nav_ul">
                 <li class="nav_li " v-for='(item,index) in nav_list' :key="index" @click="selectPage(index)" :class="{active:page == index}">
                     <span>{{item.name}}</span>
                 </li>
             </ul>
         </div>
-
-        <scroller :top="44" :bottom="49"  >
+        <scroller :top="44" :bottom="49" class="scroll_content" >
             {{page}}
             <p>dfsdfs fsf </p>
             <p>dfsdfs fsf </p>
@@ -59,7 +58,7 @@ export default {
         }
     },
     mounted(){
-        var scroll = new BScroll('.scroll_wrap',{
+        var scroll = new BScroll('.scroll_nav_wrap',{
             scrollX:true,
             scrollY:false,
             click:true,
@@ -72,8 +71,8 @@ export default {
 p{
     font-size:40px;
 }
- .scroll_wrap{
-    background:#ccc;
+ .scroll_nav_wrap{
+    background:#fff;
     width:100%;
     overflow: hidden;
     .nav_ul{
@@ -102,5 +101,8 @@ p{
         }
         
     }
+ }
+ .scroll_content{
+     background:rgb(233, 233, 233);
  }
 </style>
