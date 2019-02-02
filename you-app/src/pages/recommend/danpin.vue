@@ -27,17 +27,44 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.box{
-    // width:380px;
-    width:90%;
-    height:370px;
-    background:#fff;
-    padding:20px;
-    margin:  30px 15px 0;
+#danpin{
+    padding-top:30px;
     box-sizing:border-box;
-    img{
+    .box{
+        // width:380px;
         width:90%;
+        height:300;
+        background:#fff;
+        padding:10px 20px;
+        margin:  0 auto 30px;
+        border-radius:8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 px;
+        box-sizing:border-box;
+        box-shadow:5px 5px 10px #ccc;
+        .tit{
+            font-size:18px;
+            font-weight:900;
+            color:#000;
+        }
+        .date{
+            font-size:14px;
+            color:#999;
+            line-height:45px;
+        }
+        img{
+            width:100%;
+            margin:5px 0;
+        }
+        .desc{
+            display:-webkit-box;
+            -webkit-line-clamp:2;
+            -webkit-box-orient:vertical;
+            overflow:hidden;
+            line-height:20px;
+            color:#333;
+            font-size:14px;
+        }
     }
+
 }
 </style>
 

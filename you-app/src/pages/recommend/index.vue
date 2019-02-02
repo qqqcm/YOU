@@ -108,6 +108,6 @@ p{
     }
  }
  .scroll_content{
-     background:rgb(233, 233, 233);
+     background:rgb(251, 251, 251);
  }
 </style>
