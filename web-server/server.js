@@ -37,13 +37,13 @@ app.get(api.HOME_BAMMER_URL, (req, res)=>{
         
         data: {
            "bannerList|6":[{
-            'id|+1': 12,
+            "id|+1": 2234202,
             'bannerUrl|1':banner,
            }],
 
             'picList|10': [
                 {
-                    'id|+1': 34,
+                    "id|+1": 4213523,
                     name: '推荐',  
                      'picUrl|1':picList, 
                 }],
@@ -58,7 +58,7 @@ app.get(api.FASHION_NEW_URL,(req,res)=>{
         status:0,
         data:{
             'categoryList|20':[{
-                'id|+1':56,
+                "id|+1": 97866,
                 categoryName:"Mical kors",
                 'price|45-499':100,
                 'picUrl|1':picList, 
@@ -75,7 +75,7 @@ app.get(api.CATELIST_URL,(req,res)=>{
         data:{ 
             list:List,
             'categoryList|20':[{
-                'id|+1':78,
+                "id|+1": 0987657,
                 categoryName:"商品名称14号",
                 dicr:'备注文字10号|备注文字10号|备注文字10号|备注文字10号',
                 'price|45-499':100,
@@ -93,9 +93,10 @@ app.get(api.STARLIST_URL,(req,res)=>{
         status:0,
         data:{
            'starlist|20':[{
+            "id|+1": 6546789,
                 picUrl:Random.image('280x500'),
                 littlePicUrl:Random.image('112x60'),
-                "price|1-100": 100,
+                "price|+21": 100,
                 Shopame:'loewe',
                 dicr:"Gate 纹理皮革迷你单肩",
                 owner:'唐嫣',
@@ -115,6 +116,7 @@ app.get(api.FASHION_URL,(req,res)=>{
         status:0,
         data:{
            'fashionlist|20':[{
+            "id|+1": 7654678,
                 picUrl:Random.image('622x333'),
                 title:"2018秋冬外套造型专辑",
                 date:'OCTOBER 31，2018',
@@ -132,6 +134,7 @@ app.get(api.MEDIA_URL,(req,res)=>{
         status:0,
         data:{
            'medialist|20':[{
+            "id|+1": 3489754,
                 portrait:Random.image('80x80'),
                 "follow|100-999": 100,
                 title:'白色+驼色=时尚感',
@@ -148,17 +151,19 @@ app.get(api.RANKING_URL,(req,res)=>{
         status:0,
         data:{
            'Popularity |20':[{
-
+            "id|+1": 89765797,
                 "price|1-100": 100,
                 name:Random.word(10, 15),
                 picUrl:Random.image('240x380'),
            }],
            'newlist|20':[{
+            "id|+1": 27884679,
             "price|1-100": 100,
             name:Random.word(10, 15),
             picUrl:Random.image('240x380'),
            }],
            'otherlist|20':[{
+            "id|+1": 6732494,
             "price|1-100": 100,
             name:Random.word(10, 15),
             picUrl:Random.image('240x380'),
