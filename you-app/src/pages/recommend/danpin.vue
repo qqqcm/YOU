@@ -8,6 +8,7 @@
 import {getDanPin} from '../../services/recommendService.js'
 export default {
     created(){
+    console.log(1);
         getDanPin().then((data)=>{
             console.log(data);
         })

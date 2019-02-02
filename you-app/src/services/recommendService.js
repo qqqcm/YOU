@@ -6,7 +6,13 @@ export function getDanPin(){
     return new Promise((resolve,reject)=>{
         FetchGet(api.FASHION_URL)
         .then((data)=>{
-            resolve(data);
+            resolve(data.fashionlist.map((item)=>{
+                return{
+                    title:item.title,
+                    picUrl:item.picUrl,
+                    desc:item.desc
+                }
+            }));
         })
     })
 }
