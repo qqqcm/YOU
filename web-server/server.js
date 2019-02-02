@@ -3,6 +3,13 @@ const {mock, Random} = require('mockjs');
 const api = require('./api');
 const app = express();
 
+
+const url = require('url');
+
+const http = require('http');
+
+
+
 var picList = [
     "https://img.alicdn.com/bao/uploaded/i3/3676232520/O1CN01lXUZl11UUCZQwt5fn_!!0-item_pic.jpg_180x180.jpg",
     "https://img.alicdn.com/bao/uploaded/i2/3676232520/O1CN01nkJ2TW1UUCa67qPFy_!!0-item_pic.jpg_180x180.jpg",
@@ -26,7 +33,7 @@ var discover=['时尚单品','明星同款','自媒体','排行榜']
 app.get(api.HOME_BAMMER_URL, (req, res)=>{
     let result = mock({
         message: 'ok',
-        status: 200,
+        status: 0,
         
         data: {
            "bannerList|6":[{
@@ -48,7 +55,7 @@ app.get(api.HOME_BAMMER_URL, (req, res)=>{
 app.get(api.FASHION_NEW_URL,(req,res)=>{
     let result = mock({
         message:'ok',
-        status:200,
+        status:0,
         data:{
             'categoryList|20':[{
                 'id|+1':56,
@@ -64,7 +71,7 @@ app.get(api.FASHION_NEW_URL,(req,res)=>{
 app.get(api.CATELIST_URL,(req,res)=>{
     let result = mock({
         message:'ok',
-        status:200,
+        status:0,
         data:{ 
             list:List,
             'categoryList|20':[{
@@ -83,7 +90,7 @@ app.get(api.CATELIST_URL,(req,res)=>{
 app.get(api.STARLIST_URL,(req,res)=>{
     let result = mock({
         message:'ok',
-        status:200,
+        status:0,
         data:{
            'starlist|20':[{
                 picUrl:Random.image('280x500'),
@@ -105,7 +112,7 @@ app.get(api.STARLIST_URL,(req,res)=>{
 app.get(api.FASHION_URL,(req,res)=>{
     let result = mock({
         message:'ok',
-        status:200,
+        status:0,
         data:{
            'fashionlist|20':[{
                 picUrl:Random.image('622x333'),
@@ -122,7 +129,7 @@ app.get(api.FASHION_URL,(req,res)=>{
 app.get(api.MEDIA_URL,(req,res)=>{
     let result = mock({
         message:'ok',
-        status:200,
+        status:0,
         data:{
            'medialist|20':[{
                 portrait:Random.image('80x80'),
@@ -138,7 +145,7 @@ app.get(api.MEDIA_URL,(req,res)=>{
 app.get(api.RANKING_URL,(req,res)=>{
     let result = mock({
         message:'ok',
-        status:200,
+        status:0,
         data:{
            'Popularity |20':[{
 
