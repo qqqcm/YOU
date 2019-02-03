@@ -38,15 +38,15 @@ app.get(api.HOME_BAMMER_URL, (req, res)=>{
         data: {
            "bannerList|6":[{
             "id|+1": 2234202,
-            'bannerUrl|1':banner,
+            'bannerUrl':Random.image('750x965'),
            }],
 
             'picList|10': [
                 {
                     "id|+1": 4213523,
                     name: '推荐',  
-                     'picUrl|1':picList, 
-                }],
+                     'picUrl':Random.image('160x170'),
+                }], 
         }
     })
     res.json(result);
@@ -61,7 +61,7 @@ app.get(api.FASHION_NEW_URL,(req,res)=>{
                 "id|+1": 97866,
                 categoryName:"Mical kors",
                 'price|45-499':100,
-                'picUrl|1':picList, 
+                'picUrl':Random.image('750x965'), 
             }]
         }
     })
@@ -79,7 +79,7 @@ app.get(api.CATELIST_URL,(req,res)=>{
                 categoryName:"商品名称14号",
                 dicr:'备注文字10号|备注文字10号|备注文字10号|备注文字10号',
                 'price|45-499':100,
-                'picUrl|1':picList,
+                'picUrl':Random.image('192x192'), 
                 "score|1": "★"
             }]
         }
