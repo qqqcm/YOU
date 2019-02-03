@@ -37,7 +37,7 @@ export default {
         background:#fff;
         padding:10px 20px;
         margin:  0 auto 30px;
-        border-radius:8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 px;
+        border-radius: 8px;
         box-sizing:border-box;
         box-shadow:5px 5px 10px #ccc;
         .tit{

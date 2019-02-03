@@ -1,6 +1,7 @@
 const route = {
     path:'/recommend',
     component:()=>import('../pages/recommend/index'),
+    redirect:'/recommend/tab/0',
     children:[
         {
             path:'tab/0',

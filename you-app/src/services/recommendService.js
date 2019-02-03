@@ -16,3 +16,24 @@ export function getDanPin(){
         })
     })
 }
+
+//请求明星同款数据
+export function getMingXing (){
+    return new Promise((resolve,reject)=>{
+        FetchGet(api.STARLIST_URL)
+        .then((data)=>{
+            resolve(data.starlist.map((item)=>{
+                return{
+                    picUrl:item.picUrl,
+                    littlePicUrl:item.littlePicUrl,
+                    shopname:item.Shopame,
+                    desc:item.dicr,
+                    price:item.price,
+                    owner:item.owner,
+                    tag:item.same,
+                    ranking:item.ranking 
+                }
+            }))
+        })
+    })
+}
