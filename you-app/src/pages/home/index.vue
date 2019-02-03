@@ -15,13 +15,16 @@
         </van-swipe>
       </div>
 
-      <div class="scroll">
+      <div class="hot">
           <p>热门推荐</p>
+          <div class="scroll_wrap">
             <ul class="scroll_pic">
                 <li class="pic" v-for="item in piclist " :key='item.id'>
-                 <img :src="item.picUrl" alt="">
+                   <img :src="item.picUrl" alt="">
                 </li>
             </ul>
+
+          </div>
       </div>
 
    
@@ -63,12 +66,20 @@ export default {
       (this.piclist = data.picList), (this.bannerlist = data.bannerList), (this.shoplist = data.shopList);
     });
   },
+  mounted(){
+    var scroll = new BScroll('.scroll_wrap',{
+      scrollX:true,
+      click:true,
+    })
+  }
 
 }
   
 </script>
 
 <style lang="scss" scoped>
+#home{
+  overflow: hidden;
 .header{
     display: flex;
     justify-content: space-between;
@@ -89,7 +100,7 @@ export default {
     
   }
 }
-.scroll{
+.hot{
    
       margin-top: 15px;
     height: 240px;
@@ -98,25 +109,28 @@ export default {
        font-weight: 900; 
        padding-left:20px; 
     }
+  .scroll_wrap{
+    width:100%;
+    overflow:hidden;
+    .scroll_pic{  
+          display: flex;
+          height: 170px;
+          width:9999px;
+      }
+      .pic{
+          box-sizing: border-box;
+          box-shadow:5px 5px 10px #ccc;
+          margin:0 20px;
+          height: 170px;
+          width:160px;
+          img{
+              width: 100%;
+              height:100%;
+          }
+      }
 
+  }
 
-  .scroll_pic{  
-        display: flex;
-        height: 170px;
-        width:9999px;
-        overflow: hidden;
-    }
-    .pic{
-        box-sizing: border-box;
-        box-shadow:5px 5px 10px #ccc;
-        margin:0 20px;
-        height: 170px;
-        width:160px;
-        img{
-            width: 100%;
-            height:100%;
-        }
-    }
 
 }
   .main{
@@ -142,5 +156,5 @@ export default {
 
   }
     
- 
+ }
 </style>
