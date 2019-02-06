@@ -33,7 +33,7 @@ export default {
     .box{
         // width:380px;
         width:90%;
-        height:300;
+        // height:300;
         background:#fff;
         padding:10px 20px;
         margin:  0 auto 30px;

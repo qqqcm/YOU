@@ -37,3 +37,21 @@ export function getMingXing (){
         })
     })
 }
+
+//请求自媒体数据
+export function getMeiTi(){
+    return new Promise((resolve,reject)=>{
+        FetchGet(api.MEDIA_URL)
+        .then(data=>{
+            resolve(data.medialist.map(item=>{
+                return{
+                    id:item.id,
+                    portrait:item.portrait,
+                    follow:item.follow,
+                    title:item.title,
+                    picUrl:item.picUrl,
+                }
+            }))
+        })
+    })
+}
