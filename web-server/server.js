@@ -8,6 +8,24 @@ const url = require('url');
 
 const http = require('http');
 
+var shipin =[
+"https://img.alicdn.com/bao/uploaded/i2/3676232520/O1CN01oHM2Ur1UUCa8wz2GK_!!0-item_pic.jpg_180x180.jpg",
+"https://img.alicdn.com/bao/uploaded/i4/3676232520/O1CN01P1z0Na1UUCa3ISysl_!!0-item_pic.jpg_180x180.jpg",
+"https://img.alicdn.com/bao/uploaded/i1/3676232520/O1CN01rlc6Vb1UUCZho8p5C_!!0-item_pic.jpg_180x180.jpg",
+"https://img.alicdn.com/bao/uploaded/i1/3676232520/O1CN01jB99Vo1UUCZaskvH9_!!0-item_pic.jpg_180x180.jpg",
+"https://img.alicdn.com/bao/uploaded/i4/3676232520/O1CN01sGXF2V1UUCZzc56Ku_!!0-item_pic.jpg_180x180.jpg",
+"https://img.alicdn.com/bao/uploaded/i3/3676232520/O1CN017QH3W01UUCZsrNmoV_!!0-item_pic.jpg_180x180.jpg",
+"https://img.alicdn.com/bao/uploaded/i2/3676232520/O1CN01m9p8VL1UUCa8MmWjr_!!3676232520.jpg_180x180.jpg"
+];
+
+var fenlei= [
+
+    "https://gdp.alicdn.com/imgextra/i2/3676232520/O1CN01sC2Skc1UUCZdBllJ2_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i4/3676232520/O1CN01dlMviq1UUCZgImR6l_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i4/3676232520/O1CN01SYPdBl1UUCZdBjPqq_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN01NoceSv1UUCZgC60gy_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN01NoceSv1UUCZgC60gy_!!3676232520.jpg",
+];
 
 
 var picList = [
@@ -22,10 +40,22 @@ var picList = [
     "https://img.alicdn.com/bao/uploaded/i2/3676232520/O1CN01p3VmW81UUCa1sYs35_!!0-item_pic.jpg_180x180.jpg",
 ];
 var banner=[
-    "https://gdp.alicdn.com/imgextra/i1/3676232520/O1CN01Gg9ujC1UUCa4PJxNd_!!3676232520.jpg",
-    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN01uN1r2h1UUCa2LsPgV_!!3676232520.jpg",
-    "https://gdp.alicdn.com/imgextra/i2/3676232520/O1CN01ZAHLZ41UUCZt4XPFC_!!3676232520.jpg",
-    "https://gdp.alicdn.com/imgextra/i1/3676232520/O1CN016mj5j91UUCa2LldPh_!!3676232520.jpg"
+    "https://gdp.alicdn.com/imgextra/i1/3676232520/O1CN01KJTX2O1UUCa1lQCxW_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN01a97wa71UUCa9qJscl_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i4/3676232520/O1CN01fSbqvz1UUCaAKMf2s_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i2/3676232520/O1CN01BR7Tsh1UUCa9Ou65v_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i2/3676232520/O1CN019yjvOC1UUCa69pk7w_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN01tv7LlH1UUCa8dTeeh_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i2/3676232520/O1CN01hys00y1UUCaAoi6y5_!!3676232520.jpg"
+];
+
+var homebanner=[
+    "https://gdp.alicdn.com/imgextra/i2/3676232520/O1CN01OwmoMC1UUCa8aPwo6_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN01jAq4im1UUCa8esOGC_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN015eJg8w1UUCa9WbHfn_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN01mu5rkK1UUCa7U17JS_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN018ydGhq1UUCa9Wa4po_!!3676232520.jpg",
+    "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN012sgJk61UUCa8jadis_!!3676232520.jpg"
 ];
 var List= ['T-恤','风衣','毛衣','皮草','西装','牛仔','衬衫','女裙']
 
@@ -38,15 +68,22 @@ app.get(api.HOME_BAMMER_URL, (req, res)=>{
         data: {
            "bannerList|6":[{
             "id|+1": 2234202,
-            'bannerUrl':Random.image('750x965'),
+            'bannerUrl|1':banner,
            }],
 
             'picList|10': [
                 {
                     "id|+1": 4213523,
                     name: '推荐',  
-                     'picUrl':Random.image('160x170'),
+                    'picUrl|1':picList, 
                 }], 
+                'shopList|10': [
+                    {
+                        "id|+1": 34534,
+                        name:"时尚搭配",
+                         'shopUrl|1':picList,
+                    }],
+                    history:List
         }
     })
     res.json(result);
@@ -94,8 +131,8 @@ app.get(api.STARLIST_URL,(req,res)=>{
         data:{
            'starlist|20':[{
             "id|+1": 6546789,
-                picUrl:Random.image('280x500'),
-                littlePicUrl:Random.image('112x60'),
+                "picUrl|1":banner,
+                "littlePicUrl|1":shipin,
                 "price|+21": 100,
                 Shopame:'loewe',
                 dicr:"Gate 纹理皮革迷你单肩",
@@ -117,7 +154,7 @@ app.get(api.FASHION_URL,(req,res)=>{
         data:{
            'fashionlist|20':[{
             "id|+1": 7654678,
-                picUrl:Random.image('622x333'),
+               "picUrl|1":fenlei,
                 title:"2018秋冬外套造型专辑",
                 date:'OCTOBER 31，2018',
                 desc:Random.cparagraph()
@@ -135,10 +172,10 @@ app.get(api.MEDIA_URL,(req,res)=>{
         data:{
            'medialist|20':[{
             "id|+1": 3489754,
-                portrait:Random.image('80x80'),
+                "portrait|1":shipin,
                 "follow|100-999": 100,
                 title:'白色+驼色=时尚感',
-                picUrl:Random.image('560x516'),
+                "picUrl|1":homebanner,
            }]
         }
     })
