@@ -1,25 +1,28 @@
 <template>
     <div id="mine">
-        <div class="header">
-            <van-icon name="search" size='30px'/>
-            <span>个人中心</span>
-            <van-icon name="bag-o" size='30px'/>
-        </div>
-        <div class="user">
-            <div class="user_ava">
-                <img src="/images/avatar.jpeg" style="width:100%">
+        <router-view/>
+        <div class="indexpage" v-if="this.page==-1">
+            <div class="header">
+                <van-icon name="search" size='30px'/>
+                <span>个人中心</span>
+                <van-icon name="bag-o" size='30px'/>
             </div>
-            <span class="user_name">用户名</span>
-        </div>
-        <ul class="content">
-            <li v-for="item in contentList" :key="item.name">
-                <van-icon :name="item.iconname" style="float:left" size="30px"/>
-                <div class="text" style="float:left">
-                    <span>{{item.name}}</span>
+            <div class="user">
+                <div class="user_ava">
+                    <img src="/images/avatar.jpeg" style="width:100%">
                 </div>
-                 <van-icon name="arrow" style="float:right" size="25px"/>
-            </li>
-        </ul>
+                <span class="user_name">用户名</span>
+            </div>
+            <ul class="content">
+                <li v-for="(item,index) in contentList" :key="item.name" @click="selectPage(index)">
+                    <van-icon :name="item.iconname" style="float:left" size="30px"/>
+                    <div class="text" style="float:left">
+                        <span>{{item.name}}</span>
+                    </div>
+                    <van-icon name="arrow" style="float:right" size="25px"/>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -27,6 +30,7 @@
 export default {
     data(){
         return{
+            page:-1,
             contentList:[
                 {name:'订单',iconname:'description'},
                 {name:'收藏',iconname:'like-o'},
@@ -37,12 +41,28 @@ export default {
                 {name:'余额充值',iconname:'cash-on-deliver'},
             ]
         }
-    }
+    },
+    methods:{
+        selectPage(index){
+            this.page = index;
+            this.$router.push('mine/tab/'+index);
+        }
+    },
+    watch:{
+        //这里可以用vue导航守卫 beforeRouteUpdate，监测路由变化
+        //这里只是简单地监听 $route 对象
+        '$route'(to,from){
+            if(to.path=='/mine'){
+                this.page = -1;
+            }
+        }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 #mine{
+.indexpage{
     background:rgb(245, 245, 245);
     .header{
         background:#fff;
@@ -96,5 +116,6 @@ export default {
             }
         }
     }
+}
 }
 </style>
