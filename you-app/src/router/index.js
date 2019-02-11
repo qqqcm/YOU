@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import homeRoute from './homeRoute'
 import categoryRoute from './categoryRoute'
 import mineRoute from './mineRoute'
@@ -21,4 +22,3 @@ export default new Router({
     }
   ]
 })
-

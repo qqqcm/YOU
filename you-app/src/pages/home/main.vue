@@ -77,6 +77,7 @@ export default {
         },
         fashion1(){
           this.$router.push('/home/fashion1');
+          console.log(1)
         },
         fashion2(){
           this.$router.push('/home/fashion2');
@@ -101,6 +102,8 @@ export default {
       scrollX: true,
       click: true,
     })
+
+
   }
 
   

@@ -1,7 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 body,html{
-	font:14px "微软雅黑" ,Arial;	
+	font:14px "微软雅黑" ,Arial;
+	color:#000;	
 	
 }
 body,div,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,textarea,p,img {
@@ -13,7 +14,6 @@ li{
 }
 a{
 	text-decoration:none;
-	color:#6C6C6C;
 	font-size:12px;	
 }
 a:hover{

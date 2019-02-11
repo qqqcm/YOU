@@ -26,7 +26,7 @@ Vue.use(Icon);
 export default {
     methods:{
         pass(){
-              this.$router.back
+              this.$router.back();
         }
     }
 }
