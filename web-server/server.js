@@ -1,5 +1,5 @@
 const express = require('express');
-const {mock, Random} = require('mockjs');
+const { mock, Random } = require('mockjs');
 const api = require('./api');
 const app = express();
 
@@ -8,17 +8,17 @@ const url = require('url');
 
 const http = require('http');
 
-var shipin =[
-"https://img.alicdn.com/bao/uploaded/i2/3676232520/O1CN01oHM2Ur1UUCa8wz2GK_!!0-item_pic.jpg_180x180.jpg",
-"https://img.alicdn.com/bao/uploaded/i4/3676232520/O1CN01P1z0Na1UUCa3ISysl_!!0-item_pic.jpg_180x180.jpg",
-"https://img.alicdn.com/bao/uploaded/i1/3676232520/O1CN01rlc6Vb1UUCZho8p5C_!!0-item_pic.jpg_180x180.jpg",
-"https://img.alicdn.com/bao/uploaded/i1/3676232520/O1CN01jB99Vo1UUCZaskvH9_!!0-item_pic.jpg_180x180.jpg",
-"https://img.alicdn.com/bao/uploaded/i4/3676232520/O1CN01sGXF2V1UUCZzc56Ku_!!0-item_pic.jpg_180x180.jpg",
-"https://img.alicdn.com/bao/uploaded/i3/3676232520/O1CN017QH3W01UUCZsrNmoV_!!0-item_pic.jpg_180x180.jpg",
-"https://img.alicdn.com/bao/uploaded/i2/3676232520/O1CN01m9p8VL1UUCa8MmWjr_!!3676232520.jpg_180x180.jpg"
+var shipin = [
+    "https://img.alicdn.com/bao/uploaded/i2/3676232520/O1CN01oHM2Ur1UUCa8wz2GK_!!0-item_pic.jpg_180x180.jpg",
+    "https://img.alicdn.com/bao/uploaded/i4/3676232520/O1CN01P1z0Na1UUCa3ISysl_!!0-item_pic.jpg_180x180.jpg",
+    "https://img.alicdn.com/bao/uploaded/i1/3676232520/O1CN01rlc6Vb1UUCZho8p5C_!!0-item_pic.jpg_180x180.jpg",
+    "https://img.alicdn.com/bao/uploaded/i1/3676232520/O1CN01jB99Vo1UUCZaskvH9_!!0-item_pic.jpg_180x180.jpg",
+    "https://img.alicdn.com/bao/uploaded/i4/3676232520/O1CN01sGXF2V1UUCZzc56Ku_!!0-item_pic.jpg_180x180.jpg",
+    "https://img.alicdn.com/bao/uploaded/i3/3676232520/O1CN017QH3W01UUCZsrNmoV_!!0-item_pic.jpg_180x180.jpg",
+    "https://img.alicdn.com/bao/uploaded/i2/3676232520/O1CN01m9p8VL1UUCa8MmWjr_!!3676232520.jpg_180x180.jpg"
 ];
 
-var fenlei= [
+var fenlei = [
 
     "https://gdp.alicdn.com/imgextra/i2/3676232520/O1CN01sC2Skc1UUCZdBllJ2_!!3676232520.jpg",
     "https://gdp.alicdn.com/imgextra/i4/3676232520/O1CN01dlMviq1UUCZgImR6l_!!3676232520.jpg",
@@ -39,7 +39,7 @@ var picList = [
     "https://img.alicdn.com/bao/uploaded/i4/3676232520/O1CN01XnLLHG1UUCa52V657_!!0-item_pic.jpg_180x180.jpg",
     "https://img.alicdn.com/bao/uploaded/i2/3676232520/O1CN01p3VmW81UUCa1sYs35_!!0-item_pic.jpg_180x180.jpg",
 ];
-var banner=[
+var banner = [
     "https://gdp.alicdn.com/imgextra/i1/3676232520/O1CN01KJTX2O1UUCa1lQCxW_!!3676232520.jpg",
     "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN01a97wa71UUCa9qJscl_!!3676232520.jpg",
     "https://gdp.alicdn.com/imgextra/i4/3676232520/O1CN01fSbqvz1UUCaAKMf2s_!!3676232520.jpg",
@@ -49,7 +49,7 @@ var banner=[
     "https://gdp.alicdn.com/imgextra/i2/3676232520/O1CN01hys00y1UUCaAoi6y5_!!3676232520.jpg"
 ];
 
-var homebanner=[
+var homebanner = [
     "https://gdp.alicdn.com/imgextra/i2/3676232520/O1CN01OwmoMC1UUCa8aPwo6_!!3676232520.jpg",
     "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN01jAq4im1UUCa8esOGC_!!3676232520.jpg",
     "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN015eJg8w1UUCa9WbHfn_!!3676232520.jpg",
@@ -57,67 +57,67 @@ var homebanner=[
     "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN018ydGhq1UUCa9Wa4po_!!3676232520.jpg",
     "https://gdp.alicdn.com/imgextra/i3/3676232520/O1CN012sgJk61UUCa8jadis_!!3676232520.jpg"
 ];
-var List= ['T-恤','风衣','毛衣','皮草','西装','牛仔','衬衫','女裙']
+var List = ['T-恤', '风衣', '毛衣', '皮草', '西装', '牛仔', '衬衫', '女裙']
 
-var discover=['时尚单品','明星同款','自媒体','排行榜']
-app.get(api.HOME_BAMMER_URL, (req, res)=>{
+var discover = ['时尚单品', '明星同款', '自媒体', '排行榜']
+app.get(api.HOME_BAMMER_URL, (req, res) => {
     let result = mock({
         message: 'ok',
         status: 0,
-        
+
         data: {
-           "bannerList|6":[{
-            "id|+1": 2234202,
-            'bannerUrl|1':banner,
-           }],
+            "bannerList|6": [{
+                "id|+1": 2234202,
+                'bannerUrl|1': banner,
+            }],
 
             'picList|10': [
                 {
                     "id|+1": 4213523,
-                    name: '推荐',  
-                    'picUrl|1':picList, 
-                    'price|45-499':100,
-                }], 
-                'shopList|10': [
-                    {
-                        "id|+1": 34534,
-                        name:"时尚搭配",
-                         'shopUrl|1':picList,
-                    }],
-                    history:List
+                    name: '推荐',
+                    'picUrl|1': picList,
+                    'price|45-499': 100,
+                }],
+            'shopList|10': [
+                {
+                    "id|+1": 34534,
+                    name: "时尚搭配",
+                    'shopUrl|1': picList,
+                }],
+            history: List
         }
     })
     res.json(result);
 })
 
-app.get(api.FASHION_NEW_URL,(req,res)=>{
+app.get(api.FASHION_NEW_URL, (req, res) => {
     let result = mock({
-        message:'ok',
-        status:0,
-        data:{
-            'categoryList|20':[{
+        message: 'ok',
+        status: 0,
+        data: {
+            'categoryList|20': [{
                 "id|+1": 97866,
-                categoryName:"Mical kors",
-                'price|45-499':100,
-                'picUrl':Random.image('750x965'), 
+                categoryName: "Mical kors",
+                'price|45-499': 100,
+                'picUrl': Random.image('750x965'),
             }]
         }
     })
     res.json(result)
 })
 
-app.get(api.CATELIST_URL,(req,res)=>{
+app.get(api.CATELIST_URL, (req, res) => {
     let result = mock({
-        message:'ok',
-        status:0,
-        data:{ 
-            list:List,
-            'categoryList|20':[{
+        message: 'ok',
+        status: 0,
+        data: {
+            list: List,
+            'categoryList|20': [{
                 "id|+1": 0987657,
-                categoryName:"商品名称14号",
-                dicr:'备注文字10号|备注文字10号|备注文字10号|备注文字10号',
-                'price|45-499':100,
-                'picUrl':Random.image('192x192'), 
+                categoryName: "商品名称14号",
+                dicr: '备注文字10号|备注文字10号|备注文字10号|备注文字10号',
+                'price|45-499': 100,
+                'picUrl': Random.image('192x192'),
                 "score|1": "★"
             }]
         }
@@ -125,22 +125,22 @@ app.get(api.CATELIST_URL,(req,res)=>{
     res.json(result)
 })
 
-app.get(api.STARLIST_URL,(req,res)=>{
+app.get(api.STARLIST_URL, (req, res) => {
     let result = mock({
-        message:'ok',
-        status:0,
-        data:{
-           'starlist|20':[{
-            "id|+1": 6546789,
-                "picUrl|1":banner,
-                "littlePicUrl|1":shipin,
+        message: 'ok',
+        status: 0,
+        data: {
+            'starlist|20': [{
+                "id|+1": 6546789,
+                "picUrl|1": banner,
+                "littlePicUrl|1": shipin,
                 "price|+21": 100,
-                Shopame:'loewe',
-                dicr:"Gate 纹理皮革迷你单肩",
-                owner:'唐嫣',
-                same:'同款',
-                ranking:'Nov.01'
-           }]
+                Shopame: 'loewe',
+                dicr: "Gate 纹理皮革迷你单肩",
+                owner: '唐嫣',
+                same: '同款',
+                ranking: 'Nov.01'
+            }]
 
         }
     })
@@ -148,75 +148,75 @@ app.get(api.STARLIST_URL,(req,res)=>{
 })
 
 
-app.get(api.FASHION_URL,(req,res)=>{
+app.get(api.FASHION_URL, (req, res) => {
     let result = mock({
-        message:'ok',
-        status:0,
-        data:{
-           'fashionlist|20':[{
-            "id|+1": 7654678,
-               "picUrl|1":fenlei,
-                title:"2018秋冬外套造型专辑",
-                date:'OCTOBER 31，2018',
-                desc:Random.cparagraph()
-           }]
+        message: 'ok',
+        status: 0,
+        data: {
+            'fashionlist|20': [{
+                "id|+1": 7654678,
+                "picUrl|1": fenlei,
+                title: "2018秋冬外套造型专辑",
+                date: 'OCTOBER 31，2018',
+                desc: Random.cparagraph()
+            }]
 
         }
     })
     res.json(result)
 })
 
-app.get(api.MEDIA_URL,(req,res)=>{
+app.get(api.MEDIA_URL, (req, res) => {
     let result = mock({
-        message:'ok',
-        status:0,
-        data:{
-           'medialist|20':[{
-            "id|+1": 3489754,
-                "portrait|1":shipin,
+        message: 'ok',
+        status: 0,
+        data: {
+            'medialist|20': [{
+                "id|+1": 3489754,
+                "portrait|1": shipin,
                 "follow|100-999": 100,
-                title:'白色+驼色=时尚感',
-                "picUrl|1":homebanner,
-           }]
+                title: '白色+驼色=时尚感',
+                "picUrl|1": homebanner,
+            }]
         }
     })
     res.json(result)
 })
 
-app.get(api.RANKING_URL,(req,res)=>{
+app.get(api.RANKING_URL, (req, res) => {
     let result = mock({
-        message:'ok',
-        status:0,
-        data:{
-           'Popularity |20':[{
-            "id|+1": 89765797,
+        message: 'ok',
+        status: 0,
+        data: {
+            'Popularity |20': [{
+                "id|+1": 89765797,
                 "price|1-100": 100,
-                name:Random.word(10, 15),
-                picUrl:Random.image('240x380'),
-           }],
-           'newlist|20':[{
-            "id|+1": 27884679,
-            "price|1-100": 100,
-            name:Random.word(10, 15),
-            picUrl:Random.image('240x380'),
-           }],
-           'otherlist|20':[{
-            "id|+1": 6732494,
-            "price|1-100": 100,
-            name:Random.word(10, 15),
-            picUrl:Random.image('240x380'),
-           }]
+                name: Random.word(10, 15),
+                picUrl: Random.image('240x380'),
+            }],
+            'newlist|20': [{
+                "id|+1": 27884679,
+                "price|1-100": 100,
+                name: Random.word(10, 15),
+                picUrl: Random.image('240x380'),
+            }],
+            'otherlist|20': [{
+                "id|+1": 6732494,
+                "price|1-100": 100,
+                name: Random.word(10, 15),
+                picUrl: Random.image('240x380'),
+            }]
         }
     })
     res.json(result)
 })
 
 
-app.listen('9000', 'localhost', (error)=>{
-    if(error){
+app.listen('9000', 'localhost', (error) => {
+    if (error) {
         console.log('启动失败');
     }
-    else{
+    else {
         console.log('启动成功');
     }
 })
