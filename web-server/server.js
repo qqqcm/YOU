@@ -110,7 +110,7 @@ app.get(api.CATELIST_URL, (req, res) => {
         message: 'ok',
         status: 0,
         data: {
-            'categoryList|20': [{
+            'categoryList|8': [{
                 "id|+1": 0987657,
                 'name|1': [
                     'T-恤', '风衣', '毛衣', '皮草', '西装', '牛仔', '衬衫', '女裙'
