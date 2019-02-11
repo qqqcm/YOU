@@ -1,10 +1,9 @@
 <template>
   <div id="category" class="page">
     <header class="header border-bottom">
-      <p>
-        <van-icon name="wap-home"/>分类
-        <van-icon name="search"/>
-      </p>
+      <van-icon class="wap-home" name="wap-home"/>
+      <p>分类</p>
+      <van-icon class="search" name="search"/>
     </header>
     <div class="wrap">
       <scroller :top="74" :bottom="49" :width="80">
@@ -30,7 +29,6 @@
             <div class="content-img">
               <img :src="value.picUrl">
             </div>
-
             <div class="content">
               <p>{{value.categoryName}}</p>
               <span>{{value.dicr}}</span>
@@ -81,15 +79,23 @@ export default {
     padding: 12px 8px;
     box-sizing: border-box;
     justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    .wap-home {
+      font-size: 20px;
+    }
     p {
       line-height: 28px;
-      font-size: 14px;
+      font-size: 20px;
+    }
+    .search {
+      font-size: 20px;
     }
   }
   .wrap {
     display: flex;
     .scroller-wrap:nth-of-type(1) {
       li {
+        margin-top: 10px;
         line-height: 50px;
         font-size: 14px;
         color: #333;
@@ -104,6 +110,7 @@ export default {
     }
     .scroller-wrap:nth-of-type(2) {
       .content-list {
+        margin-left: 3px;
         .content-item {
           width: 100%;
           display: flex;
@@ -132,10 +139,13 @@ export default {
             span:nth-child(3) {
               display: inline;
               font-size: 16px;
+              line-height: 45px;
             }
             span:nth-child(4) {
               display: inline;
-              margin-left: 100px;
+              font-size: 16px;
+              color: yellow;
+              margin-left: 130px;
             }
           }
         }
