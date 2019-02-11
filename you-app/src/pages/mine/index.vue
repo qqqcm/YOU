@@ -11,7 +11,7 @@
                 <div class="user_ava">
                     <img src="/images/avatar.jpeg" style="width:100%">
                 </div>
-                <span class="user_name">用户名</span>
+                <span class="user_name">厘米°</span>
             </div>
             <ul class="content">
                 <li v-for="(item,index) in contentList" :key="item.name" @click="selectPage(index)">
