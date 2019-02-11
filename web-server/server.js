@@ -110,14 +110,19 @@ app.get(api.CATELIST_URL, (req, res) => {
         message: 'ok',
         status: 0,
         data: {
-            list: List,
             'categoryList|20': [{
                 "id|+1": 0987657,
-                categoryName: "商品名称14号",
-                dicr: '备注文字10号|备注文字10号|备注文字10号|备注文字10号',
-                'price|45-499': 100,
-                'picUrl|1': fenlei,
-                "score|1": "★"
+                'name|1': [
+                    'T-恤', '风衣', '毛衣', '皮草', '西装', '牛仔', '衬衫', '女裙'
+                ],
+                "subCateList|20": [{
+                    categoryName: "商品名称14号",
+                    dicr: '备注文字10号|备注文字10号|备注文字10号|备注文字10号',
+                    'price|45-499': 100,
+                    'picUrl|1': picList,
+                    "score|1": "★"
+                }],
+
             }]
         }
     })

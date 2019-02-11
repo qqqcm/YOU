@@ -18,15 +18,20 @@ export function getCategoryList() {
         FetchGet(api.CATELIST_URL)
             .then(data => {
                 resolve({
-                    list: data.list,
                     categoryList: data.categoryList.map((item) => {
                         return {
                             id: item.id,
-                            categoryName: item.categoryName,
-                            dicr: item.dicr,
-                            price: item.price,
-                            picUrl: item.picUrl,
-                            score: item.score
+                            name: item.name,
+                            subCateList: item.subCateList.map((subItem) => {
+                                return {
+                                    categoryName: subItem.categoryName,
+                                    dicr: subItem.dicr,
+                                    price: subItem.price,
+                                    picUrl: subItem.picUrl,
+                                    score: subItem.score
+                                }
+                            })
+
                         }
                     })
                 })

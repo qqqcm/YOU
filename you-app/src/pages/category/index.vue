@@ -13,19 +13,12 @@
           :class="{active: selectIndex===index}"
           @click="selectedTab(index)"
         >
-          <p>{{item}}</p>
+          <p>{{item.name}}</p>
         </li>
       </scroller>
-      <scroller
-        ref="content"
-        :top="74"
-        :bottom="49"
-        :width="295"
-        :left="80"
-        v-if="categoryList.length>0"
-      >
+      <scroller ref="content" :top="74" :bottom="49" :width="295" :left="80" v-if="list.length>0">
         <ul class="content-list">
-          <li class="content-item" v-for="value in categoryList" :key="value.id">
+          <li class="content-item" v-for="value in list[selectIndex].subCateList" :key="value.id">
             <div class="content-img">
               <img :src="value.picUrl">
             </div>
@@ -48,8 +41,7 @@ export default {
   data() {
     return {
       selectIndex: 0,
-      list: [],
-      categoryList: []
+      list: []
     };
   },
   methods: {
@@ -59,8 +51,7 @@ export default {
   },
   created() {
     getCategoryList().then(data => {
-      this.list = data.list;
-      this.categoryList = data.categoryList;
+      this.list = data.categoryList;
     });
   }
 };
