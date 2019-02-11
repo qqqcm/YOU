@@ -76,6 +76,7 @@ app.get(api.HOME_BAMMER_URL, (req, res) => {
                     "id|+1": 4213523,
                     name: '推荐',
                     'picUrl|1': picList,
+                    'price|45-499': 100,
                 }],
             'shopList|10': [
                 {
@@ -88,6 +89,7 @@ app.get(api.HOME_BAMMER_URL, (req, res) => {
     })
     res.json(result);
 })
+
 
 app.get(api.FASHION_NEW_URL, (req, res) => {
     let result = mock({
