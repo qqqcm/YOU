@@ -11,7 +11,7 @@
         </nav>
         <div class="none">
             <p>暂时没有订单</p>
-            <span @click="goTo">去逛逛</span>
+            <!-- <router-link :to="/recommend"><span>去逛逛</span></router-link> -->
         </div>
     </div>
 </template>

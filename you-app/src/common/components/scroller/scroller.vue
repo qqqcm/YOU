@@ -64,11 +64,6 @@ export default {
       }
     }
   },
-  /* methods:{
-        fresh(){
-            this.scroller.refresh();
-        }
-    }, */
   mounted() {
     //这条好重要哎！！动不动就靠它了！！！
     const scroller = new BScroll(this.$refs.scroll, {

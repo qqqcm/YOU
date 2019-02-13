@@ -1,9 +1,9 @@
 <template>
   <div id="category" class="page">
     <header class="header border-bottom">
-      <van-icon class="wap-home" name="wap-home"/>
+      <van-icon class="wap-home" name="wap-home" @click="home"/>
       <p>分类</p>
-      <van-icon class="search" name="search"/>
+      <van-icon class="search" name="search" @click="search"/>
     </header>
     <div class="wrap">
       <scroller :top="74" :bottom="49" :width="80">
@@ -16,7 +16,7 @@
           <p>{{item.name}}</p>
         </li>
       </scroller>
-      <scroller ref="content" :top="74" :bottom="49" :width="295" :left="80" v-if="list.length>0">
+      <scroller ref="scroller" :top="74" :bottom="49" :width="295" :left="80" v-if="list.length>0">
         <ul class="content-list">
           <li class="content-item" v-for="value in list[selectIndex].subCateList" :key="value.id">
             <div class="content-img">
@@ -47,8 +47,15 @@ export default {
   methods: {
     selectedTab(index) {
       this.selectIndex = index;
+    },
+    home() {
+      this.$router.push("/home");
+    },
+    search() {
+      this.$router.push("/home/search");
     }
   },
+
   created() {
     getCategoryList().then(data => {
       this.list = data.categoryList;
@@ -86,7 +93,6 @@ export default {
     display: flex;
     .scroller-wrap:nth-of-type(1) {
       li {
-        margin-top: 10px;
         line-height: 50px;
         font-size: 14px;
         color: #333;
