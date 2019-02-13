@@ -64,7 +64,6 @@ app.get(api.HOME_BAMMER_URL, (req, res) => {
     let result = mock({
         message: 'ok',
         status: 0,
-
         data: {
             "bannerList|6": [{
                 "id|+1": 2234202,
@@ -90,10 +89,6 @@ app.get(api.HOME_BAMMER_URL, (req, res) => {
     res.json(result);
 })
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 035e9fa18f7856e30de9276288baa16a783d2ae9
 app.get(api.FASHION_NEW_URL, (req, res) => {
     let result = mock({
         message: 'ok',
@@ -115,16 +110,6 @@ app.get(api.CATELIST_URL, (req, res) => {
         message: 'ok',
         status: 0,
         data: {
-<<<<<<< HEAD
-            list: List,
-            'categoryList|20': [{
-                "id|+1": 0987657,
-                categoryName: "商品名称14号",
-                dicr: '备注文字10号|备注文字10号|备注文字10号|备注文字10号',
-                'price|45-499': 100,
-                'picUrl': Random.image('192x192'),
-                "score|1": "★"
-=======
             'categoryList|8': [{
                 "id|+1": 0987657,
                 'name|1': [
@@ -138,7 +123,6 @@ app.get(api.CATELIST_URL, (req, res) => {
                     "score|1": "★"
                 }],
 
->>>>>>> 035e9fa18f7856e30de9276288baa16a783d2ae9
             }]
         }
     })
@@ -159,7 +143,8 @@ app.get(api.STARLIST_URL, (req, res) => {
                 dicr: "Gate 纹理皮革迷你单肩",
                 owner: '唐嫣',
                 same: '同款',
-                ranking: 'Nov.01'
+                ranking: 'Nov.01',
+         
             }]
 
         }
@@ -185,6 +170,7 @@ app.get(api.FASHION_URL, (req, res) => {
     })
     res.json(result)
 })
+
 
 app.get(api.MEDIA_URL, (req, res) => {
     let result = mock({

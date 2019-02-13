@@ -9,11 +9,7 @@ const route = {
             props:true,
             component:()=>import('../pages/home/main')
         },
-        {
-            path:'search',
-            props:true,
-            component:()=>import('../pages/home/search')
-        },
+
         {
             path:'fashion1',
             props:true,
