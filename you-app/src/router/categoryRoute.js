@@ -7,6 +7,11 @@ const route = {
             component: () => import('../common/components/goodsdetail/goodsdetail'),
             props: true
         },
+        {
+            path: 'home',
+            component: () => import('../pages/home'),
+            props: true
+        }
         
         
     ]

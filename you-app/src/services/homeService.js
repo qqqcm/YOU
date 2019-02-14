@@ -29,11 +29,7 @@ export function getCategoryList() {
                                     price: subItem.price,
                                     picUrl: subItem.picUrl,
                                     score: subItem.score,
-                                    bannerList: subItem.bannerList.map((banner) => {
-                                        return {
-                                            bannerUrl: banner.bannerUrl
-                                        }
-                                    })
+                                    id: subItem.id
                                 }
                             })
 
