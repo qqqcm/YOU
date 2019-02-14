@@ -21,6 +21,10 @@ export default new Router({
       component:()=>import('../common/components/search/search')
     },
     {
+      path:'/shopbag',
+      component:()=>import('../common/components/shopbag/shopbag')
+    },
+    {
       path:'/',
       redirect:'/home'
     }

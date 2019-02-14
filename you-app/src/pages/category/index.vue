@@ -52,7 +52,7 @@ export default {
       this.$router.push("/home");
     },
     search() {
-      this.$router.push("/home/search");
+      this.$router.push("/search");
     }
   },
 
