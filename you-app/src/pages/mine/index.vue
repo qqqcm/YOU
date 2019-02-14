@@ -1,11 +1,12 @@
 <template>
     <div id="mine">
         <router-view/>
+        <!-- 控制隐藏 -->
         <div class="indexpage" v-if="this.page==-1">
             <div class="header">
-                <van-icon name="search" size='30px'/>
+                <van-icon name="search" size='30px' @click="search"/>
                 <span>个人中心</span>
-                <van-icon name="bag-o" size='30px'/>
+                <van-icon name="bag-o" size='30px' @click="shopbag"/>
             </div>
             <div class="user">
                 <div class="user_ava">
@@ -46,11 +47,18 @@ export default {
         selectPage(index){
             this.page = index;
             this.$router.push('mine/tab/'+index);
+        },
+        search(){
+            this.$router.push('/search');
+        },
+        shopbag(){
+            this.$router.push('/shopbag');
         }
     },
     watch:{
         //这里可以用vue导航守卫 beforeRouteUpdate，监测路由变化
         //这里只是简单地监听 $route 对象
+        //从tab页面返回到index页面
         '$route'(to,from){
             if(to.path=='/mine'){
                 this.page = -1;
