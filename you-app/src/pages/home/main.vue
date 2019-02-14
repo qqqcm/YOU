@@ -73,7 +73,7 @@ export default {
 
  methods:{
         search(){
-          this.$router.push('/home/search');
+          this.$router.push('/search');
         },
         fashion1(){
           this.$router.push('/home/fashion1');

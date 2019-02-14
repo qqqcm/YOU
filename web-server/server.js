@@ -64,7 +64,6 @@ app.get(api.HOME_BAMMER_URL, (req, res) => {
     let result = mock({
         message: 'ok',
         status: 0,
-
         data: {
             "bannerList|6": [{
                 "id|+1": 2234202,
@@ -147,7 +146,8 @@ app.get(api.STARLIST_URL, (req, res) => {
                 dicr: "Gate 纹理皮革迷你单肩",
                 owner: '唐嫣',
                 same: '同款',
-                ranking: 'Nov.01'
+                ranking: 'Nov.01',
+         
             }]
 
         }
@@ -173,6 +173,7 @@ app.get(api.FASHION_URL, (req, res) => {
     })
     res.json(result)
 })
+
 
 app.get(api.MEDIA_URL, (req, res) => {
     let result = mock({

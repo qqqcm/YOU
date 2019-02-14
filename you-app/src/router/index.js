@@ -17,6 +17,10 @@ export default new Router({
     mineRoute,
     recommendRoute,
     {
+      path:'/search',
+      component:()=>import('../common/components/search/search')
+    },
+    {
       path:'/',
       redirect:'/home'
     }
