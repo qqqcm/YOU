@@ -28,7 +28,8 @@ export function getCategoryList() {
                                     dicr: subItem.dicr,
                                     price: subItem.price,
                                     picUrl: subItem.picUrl,
-                                    score: subItem.score
+                                    score: subItem.score,
+                                    id: subItem.id
                                 }
                             })
 

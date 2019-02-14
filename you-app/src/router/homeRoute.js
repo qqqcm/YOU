@@ -9,7 +9,6 @@ const route = {
             props:true,
             component:()=>import('../pages/home/main')
         },
-
         {
             path:'fashion1',
             props:true,

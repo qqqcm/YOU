@@ -17,8 +17,10 @@
         </li>
       </scroller>
       <scroller ref="scroller" :top="74" :bottom="49" :width="295" :left="80" v-if="list.length>0">
+
+
         <ul class="content-list">
-          <li class="content-item" v-for="value in list[selectIndex].subCateList" :key="value.id">
+          <li @click="details(value)" class="content-item" v-for="value in list[selectIndex].subCateList" :key="value.id">
             <div class="content-img">
               <img :src="value.picUrl">
             </div>
@@ -30,6 +32,8 @@
             </div>
           </li>
         </ul>
+
+
       </scroller>
     </div>
   </div>
@@ -45,6 +49,14 @@ export default {
     };
   },
   methods: {
+
+    
+    details(value){
+      console.log(value.id)
+    },
+
+
+
     selectedTab(index) {
       this.selectIndex = index;
     },
@@ -52,7 +64,7 @@ export default {
       this.$router.push("/home");
     },
     search() {
-      this.$router.push("/home/search");
+      this.$router.push("/search");
     }
   },
 
