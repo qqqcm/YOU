@@ -121,9 +121,11 @@ app.get(api.CATELIST_URL, (req, res) => {
                     dicr: '备注文字10号|备注文字10号|备注文字10号|备注文字10号',
                     'price|45-499': 100,
                     'picUrl|1': picList,
-                    "score|1": "★"
-                }],
-
+                    "score|1": "★",
+                    "bannerList|4": [{
+                        'bannerUrl|1': banner,
+                    }],
+                }]
             }]
         }
     })

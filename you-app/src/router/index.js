@@ -25,10 +25,13 @@ export default new Router({
       component:()=>import('../common/components/shopbag/shopbag')
     },
     {
+<<<<<<< HEAD
       path:'/details',
       component:()=>import('../common/components/details/details')
     },
     {
+=======
+>>>>>>> 43eb979d14970ae05064023a95dace6b843bc943
       path:'/',
       redirect:'/home'
     }
