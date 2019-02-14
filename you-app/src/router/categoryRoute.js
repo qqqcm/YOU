@@ -3,8 +3,8 @@ const route = {
     component: () => import('../pages/category/index'),
     children: [
         {
-            path: 'group/:id',
-            component: () => import('../pages/category/category-group'),
+            path: 'goodsDetail/:id',
+            component: () => import('../pages/common/goodsDetail'),
             props: true
         },
         {

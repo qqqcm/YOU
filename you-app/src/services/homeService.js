@@ -1,5 +1,6 @@
 import { FetchGet, FetchPost } from '../common/fetch';
 import api from '../api'
+import { promises } from 'fs';
 
 //请求首页
 export function gethome() {
@@ -28,7 +29,12 @@ export function getCategoryList() {
                                     dicr: subItem.dicr,
                                     price: subItem.price,
                                     picUrl: subItem.picUrl,
-                                    score: subItem.score
+                                    score: subItem.score,
+                                    bannerList: subItem.bannerList.map((banner) => {
+                                        return {
+                                            bannerUrl: banner.bannerUrl
+                                        }
+                                    })
                                 }
                             })
 
