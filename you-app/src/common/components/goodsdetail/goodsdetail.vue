@@ -1,5 +1,5 @@
 <template>
-  <div id="Detail">
+  <div id="detail">
     <div class="banner">
       <van-nav-bar class="header" left-arrow @click-left="onClickLeft"/>
       <van-swipe :autoplay="3000" indicator-color="white">
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#Detail {
+#detail {
   .header {
     img {
       width: 100%;
