@@ -1,6 +1,5 @@
 import { FetchGet, FetchPost } from '../common/fetch';
 import api from '../api'
-import { promises } from 'fs';
 
 //请求首页
 export function gethome() {

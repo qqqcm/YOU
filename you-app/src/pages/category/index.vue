@@ -153,8 +153,8 @@ export default {
             span:nth-child(4) {
               display: inline;
               font-size: 16px;
-              color: yellow;
-              margin-left: 130px;
+              color: rgb(250,198,50);
+              margin-left: 110px;
             }
           }
         }

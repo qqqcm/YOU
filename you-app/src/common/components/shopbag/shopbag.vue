@@ -4,6 +4,11 @@
             <van-icon name="arrow-left" class="arrow" size="30px" @click="goBack"/>
             <p>购物袋</p>
         </header>
+        <scroller>
+            <ul class="bag_content">
+                <li></li>
+            </ul>
+        </scroller>
     </div>
 </template>
 
