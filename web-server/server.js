@@ -219,6 +219,22 @@ app.get(api.RANKING_URL, (req, res) => {
     })
     res.json(result)
 })
+app.get('/api/details', (req, res) => {
+    let result = mock({
+        message: 'ok',
+        status: 0,
+        data: {
+            'otherlist|20': [{
+                url:Random.url(),
+                "id|+1": 6732494,
+                "price|1-100": 100,
+                name: Random.word(10, 15),
+                picUrl: Random.image('240x380'),
+            }]
+        }
+    })
+    res.json(result)
+})
 
 
 app.listen('9000', 'localhost', (error) => {

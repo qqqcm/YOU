@@ -27,6 +27,7 @@ const route = {
             path:'tab/6',
             component:()=>import('../pages/mine/chongzhi')
         },
+        
     ]
 }
 export default route;
