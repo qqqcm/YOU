@@ -17,12 +17,12 @@ export default new Router({
     mineRoute,
     recommendRoute,
     {
-      path:'/search',
-      component:()=>import('../common/components/search/search')
+      path: '/search',
+      component: () => import('../common/components/search/search')
     },
     {
-      path:'/shopbag',
-      component:()=>import('../common/components/shopbag/shopbag')
+      path: '/shopbag',
+      component: () => import('../common/components/shopbag/shopbag')
     },
     {
       path:'/',

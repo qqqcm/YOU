@@ -69,6 +69,7 @@ export default {
     const scroller = new BScroll(this.$refs.scroll, {
       click: true
     });
+    this.scroll = scroll;
     scroller.on("beforeScrollStart", () => {
       scroller.refresh();
     });

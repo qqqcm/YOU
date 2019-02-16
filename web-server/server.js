@@ -188,7 +188,12 @@ app.get(api.STARLIST_URL, (req, res) => {
                 owner: '唐嫣',
                 same: '同款',
                 ranking: 'Nov.01',
-         
+                detail: 'Organic black',
+                'tagname|1': [
+                    '人气排行', '最新排行'
+                ],
+                morename: '查看更多 ',
+                "pic|10": shipin
             }]
 
         }
