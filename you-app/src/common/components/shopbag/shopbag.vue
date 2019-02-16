@@ -6,7 +6,20 @@
         </header>
         <scroller>
             <ul class="bag_content">
-                <li></li>
+                <li v-for="(item,index) in goodsData" :key="index" >
+                    <van-checkbox v-model="checked"></van-checkbox>
+                    <div class="img">
+                        <img src="item.picUrl">
+                    </div>
+                    <div class="text">
+                        <p>品牌</p>
+                        <p>{{item.categoryName}}</p>
+
+                    </div>
+                    <div class="button">
+                        
+                    </div>
+                </li>
             </ul>
         </scroller>
     </div>
@@ -14,10 +27,19 @@
 
 <script>
 export default {
+    data(){
+        return{
+            goodsData:[]
+        }
+    },
     methods:{
         goBack(){
             this.$router.back();
         }
+    },
+    mounted(){
+        this.goodsData=this.$store.state.goodsData;
+        console.log(this.goodsData);
     }
 }
 </script>

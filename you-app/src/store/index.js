@@ -16,7 +16,7 @@ export default new Vuex.Store({
       state.showmine = false;
     },
     addGoodsData(state,data){
-      state.goodsData.push(data);
+      state.goodsData = data;
     }
   },
   actions: {

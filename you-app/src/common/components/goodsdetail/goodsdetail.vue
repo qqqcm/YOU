@@ -72,6 +72,7 @@ export default {
     },
     gotoBag(){
       this.$router.push('/shopbag');
+      this.$store.commit('addGoodsData',this.$store.state.goodsData);
     },
     gotoBuy(id){
       this.$router.push('/mine/tab/0');
@@ -80,7 +81,15 @@ export default {
   } ,
   mounted(){
     this.detailData = this.$parent.detailData;
-  }
+    this.$store.state.goodsData = this.detailData;
+  },
+  // watch:{
+  //   '$route'(to,from){
+  //     if(to.path=='/category/goodsdetail'){
+  //       this.detailData = this.$store.state.goodsData;
+  //     }
+  //   }
+  // }
   
 };
 </script>

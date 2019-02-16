@@ -59,7 +59,7 @@ export default {
       this.$router.push({path:'/category/goodsdetail/'+id});
       getCategoryList(id).then(data => {
         this.detailData = data.categoryList[0].subCateList[0];
-        console.log(this.detailData)
+        // console.log(this.detailData)
       });
     },
     selectedTab(index) {

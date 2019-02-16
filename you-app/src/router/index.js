@@ -24,12 +24,10 @@ export default new Router({
       path: '/shopbag',
       component: () => import('../common/components/shopbag/shopbag')
     },
-    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      path:'/details',
-      component:()=>import('../common/components/details/details')
-    },
+    // {
+    //   path:'/details',
+    //   component:()=>import('../common/components/details/details')
+    // },
     {
       path:'/login',
       component:()=>import('../common/components/users/login')
@@ -39,10 +37,6 @@ export default new Router({
       component:()=>import('../common/components/users/register')
     },
     {
-=======
->>>>>>> 2bdca882b6e47a1b094212921aa786b3d61039dd
-=======
->>>>>>> 2bdca882b6e47a1b094212921aa786b3d61039dd
       path:'/',
       redirect:'/home'
     }
