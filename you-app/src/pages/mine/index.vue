@@ -2,7 +2,7 @@
     <div id="mine">
         <router-view/>
         <!-- 控制隐藏 -->
-        <div class="indexpage" v-if="this.page==-1">
+        <div class="indexpage" v-if="this.$store.state.showmine">
             <div class="header">
                 <van-icon name="search" size='30px' @click="search"/>
                 <span>个人中心</span>
@@ -31,7 +31,6 @@
 export default {
     data(){
         return{
-            page:-1,
             contentList:[
                 {name:'订单',iconname:'description'},
                 {name:'收藏',iconname:'like-o'},
@@ -45,7 +44,7 @@ export default {
     },
     methods:{
         selectPage(index){
-            this.page = index;
+            this.$store.commit('noShowMine');
             this.$router.push('mine/tab/'+index);
         },
         search(){
@@ -60,10 +59,11 @@ export default {
         //这里只是简单地监听 $route 对象
         //从tab页面返回到index页面
         '$route'(to,from){
+            immediate:true;
             if(to.path=='/mine'){
-                this.page = -1;
+                this.$store.commit('yesShowMine');
             }
-        }
+        },
     },
 }
 </script>

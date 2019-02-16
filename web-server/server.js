@@ -105,6 +105,8 @@ app.get(api.FASHION_NEW_URL, (req, res) => {
     res.json(result)
 })
 
+
+//请求分类数据，及商品详情数据
 app.get(api.CATELIST_URL, (req, res) => {
     let result = mock({
         message: 'ok',
@@ -112,16 +114,17 @@ app.get(api.CATELIST_URL, (req, res) => {
         data: {
             'categoryList|8': [{
                 "id|+1": 0987657,
-                'name|1': [
+                'name|+1': [
                     'T-恤', '风衣', '毛衣', '皮草', '西装', '牛仔', '衬衫', '女裙'
                 ],
+
                 "subCateList|20": [{
                     "id|+1": 1,
                     categoryName: "商品名称14号",
                     dicr: '备注文字10号|备注文字10号|备注文字10号|备注文字10号',
                     'price|45-499': 100,
                     'picUrl|1': picList,
-                    "score|1": "★",
+                    "score|1-5": "★",
                     "bannerList|4": [{
                         'bannerUrl|1': banner,
                     }],
@@ -129,6 +132,44 @@ app.get(api.CATELIST_URL, (req, res) => {
             }]
         }
     })
+    let {id} = url.parse(req.url,true).query;
+    if(id){
+        res.json(mock({
+            message: 'ok',
+            status: 0,
+            data: {    
+                categoryList:[{
+
+                    subCateList: [{
+                        id: id,
+                        categoryName: Random.csentence(5,20),
+                        dicr: Random.cparagraph(2,20),
+                        'color|1-6':{
+                        red:'红色',
+                        green:'绿色',
+                        blue:'蓝色',
+                        yellow:'黄色',
+                        pink:'粉色',
+                        perple:'紫色'
+                        },
+                        'size|1-5':{
+                            X:'X',
+                            XM:'XM',
+                            M:'M',
+                            XL:'XL',
+                            XXL:'XXL',
+                        },
+                        'price|45-499': 100,
+                        'picUrl|1': picList,
+                        "bannerList|4": [{
+                            'bannerUrl|1': banner,
+                        }],
+                      }]
+                }]
+            }
+        }))
+        return;
+    }
     res.json(result)
 })
 
@@ -147,7 +188,12 @@ app.get(api.STARLIST_URL, (req, res) => {
                 owner: '唐嫣',
                 same: '同款',
                 ranking: 'Nov.01',
-         
+                detail: 'Organic black',
+                'tagname|1': [
+                    '人气排行', '最新排行'
+                ],
+                morename: '查看更多 ',
+                "pic|10": shipin
             }]
 
         }

@@ -1,5 +1,8 @@
 <template>
-  <div id="category" class="page">
+<div id="category">
+  <router-view/>
+
+  <div class="page" v-show="!this.$route.params.id">
     <header class="header border-bottom">
       <van-icon class="wap-home" name="wap-home" @click="home"/>
       <p>分类</p>
@@ -20,7 +23,7 @@
 
 
         <ul class="content-list">
-          <li @click="details(value)" class="content-item" v-for="value in list[selectIndex].subCateList" :key="value.id">
+          <li @click="details(value.id)" class="content-item" v-for="value in list[selectIndex].subCateList" :key="value.id">
             <div class="content-img">
               <img :src="value.picUrl">
             </div>
@@ -36,7 +39,9 @@
 
       </scroller>
     </div>
+  
   </div>
+</div>
 </template>
 
 <script>
@@ -45,18 +50,18 @@ export default {
   data() {
     return {
       selectIndex: 0,
-      list: []
+      list: [],
+      detailData:[],
     };
   },
   methods: {
-
-    
-    details(value){
-      console.log(value.id)
+    details(id){
+      this.$router.push({path:'/category/goodsdetail/'+id});
+      getCategoryList(id).then(data => {
+        this.detailData = data.categoryList[0].subCateList[0];
+        console.log(this.detailData)
+      });
     },
-
-
-
     selectedTab(index) {
       this.selectIndex = index;
     },
@@ -153,8 +158,8 @@ export default {
             span:nth-child(4) {
               display: inline;
               font-size: 16px;
-              color: yellow;
-              margin-left: 130px;
+              color: rgb(250,198,50);
+              margin-left: 110px;
             }
           }
         }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" v-if="!this.$route.params.id">
       <router-link to="/" class="tab"><Icon type="ios-home-outline" /></router-link>
       <router-link to="/category" class="tab"><Icon type="ios-list-box-outline" /></router-link>
       <router-link to='/recommend' class="tab"><Icon type="ios-compass-outline" /></router-link>

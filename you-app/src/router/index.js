@@ -17,14 +17,15 @@ export default new Router({
     mineRoute,
     recommendRoute,
     {
-      path:'/search',
-      component:()=>import('../common/components/search/search')
+      path: '/search',
+      component: () => import('../common/components/search/search')
     },
     {
-      path:'/shopbag',
-      component:()=>import('../common/components/shopbag/shopbag')
+      path: '/shopbag',
+      component: () => import('../common/components/shopbag/shopbag')
     },
     {
+<<<<<<< HEAD
       path:'/details',
       component:()=>import('../common/components/details/details')
     },
@@ -37,6 +38,8 @@ export default new Router({
       component:()=>import('../common/components/users/register')
     },
     {
+=======
+>>>>>>> 2bdca882b6e47a1b094212921aa786b3d61039dd
       path:'/',
       redirect:'/home'
     }
