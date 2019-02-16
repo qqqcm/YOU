@@ -26,6 +26,7 @@ export default new Router({
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       path:'/details',
       component:()=>import('../common/components/details/details')
     },
@@ -38,6 +39,8 @@ export default new Router({
       component:()=>import('../common/components/users/register')
     },
     {
+=======
+>>>>>>> 2bdca882b6e47a1b094212921aa786b3d61039dd
 =======
 >>>>>>> 2bdca882b6e47a1b094212921aa786b3d61039dd
       path:'/',
