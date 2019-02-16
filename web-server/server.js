@@ -138,29 +138,33 @@ app.get(api.CATELIST_URL, (req, res) => {
             message: 'ok',
             status: 0,
             data: {    
-                "subCateList": [{
-                    id: id,
-                    categoryName: Random.csentence(5,20),
-                    dicr: Random.cparagraph(2,20),
-                    'color|1-6':{
+                categoryList:[{
+
+                    subCateList: [{
+                        id: id,
+                        categoryName: Random.csentence(5,20),
+                        dicr: Random.cparagraph(2,20),
+                        'color|1-6':{
                         red:'红色',
                         green:'绿色',
                         blue:'蓝色',
                         yellow:'黄色',
                         pink:'粉色',
                         perple:'紫色'
-                    },
-                    'size|1-5':{
-                        X:'X',
-                        XM:'XM',
-                        M:'M',
-                        XL:'XL',
-                        XXL:'XXL',
-                    },
-                    'price|45-499': 100,
-                    "bannerList|4": [{
-                        'bannerUrl|1': banner,
-                    }],
+                        },
+                        'size|1-5':{
+                            X:'X',
+                            XM:'XM',
+                            M:'M',
+                            XL:'XL',
+                            XXL:'XXL',
+                        },
+                        'price|45-499': 100,
+                        'picUrl|1': picList,
+                        "bannerList|4": [{
+                            'bannerUrl|1': banner,
+                        }],
+                      }]
                 }]
             }
         }))

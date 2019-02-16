@@ -1,4 +1,4 @@
-const route = {
+const route = { 
     path:'/mine',
     component:()=>import('../pages/mine/index'),
     children:[
@@ -27,6 +27,7 @@ const route = {
             path:'tab/6',
             component:()=>import('../pages/mine/chongzhi')
         },
-    ]
+    ],
+   
 }
 export default route;

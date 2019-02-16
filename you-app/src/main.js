@@ -4,9 +4,9 @@ import router from './router'
 import store from './store'
 import common from './common'
 import iView from 'iview';
-import { Icon } from 'vant';
+import { Icon,Swipe, SwipeItem } from 'vant';
 
-Vue.use(Icon);
+Vue.use(Icon).use(Swipe).use(SwipeItem);
 Vue.use(common);
 Vue.use(iView);
 

@@ -3,17 +3,10 @@ const route = {
     component: () => import('../pages/category/index'),
     children: [
         {
-            path: 'goodsdetail/:id',
-            component: () => import('../common/components/goodsdetail/goodsdetail'),
-            props: true
+            path:'goodsdetail/:id',
+            props:true,
+            component: () =>import('../common/components/goodsdetail/goodsdetail')
         },
-        {
-            path: 'home',
-            component: () => import('../pages/home'),
-            props: true
-        }
-        
-        
     ]
 }
 export default route;

@@ -13,9 +13,9 @@ export function gethome() {
 
 //请求分类
 
-export function getCategoryList() {
+export function getCategoryList(id) {
     return new Promise((resolve, reject) => {
-        FetchGet(api.CATELIST_URL)
+        FetchGet(api.CATELIST_URL,{id})
             .then(data => {
                 resolve({
                     categoryList: data.categoryList.map((item) => {
@@ -29,7 +29,10 @@ export function getCategoryList() {
                                     price: subItem.price,
                                     picUrl: subItem.picUrl,
                                     score: subItem.score,
-                                    id: subItem.id
+                                    id: subItem.id,
+                                    bannerList: subItem.bannerList,
+                                    color:subItem.color,
+                                    size:subItem.size
                                 }
                             })
 

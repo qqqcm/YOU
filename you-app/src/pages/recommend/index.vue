@@ -13,29 +13,7 @@
     <!-- 路由主要内容开始 -->
         <scroller :top="44" :bottom="49" class="scroll_content" >
             <router-view/>
-           <!--  <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p>
-            <p>dfsdfs fsf </p> -->
+          
         </scroller>
     <!-- 路由主要部分结束 -->
     </div>
